@@ -1,3 +1,44 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "react/no-danger": "warn",
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "CallExpression[callee.object.name='Date'][callee.property.name='now']",
+        "message": "⚠️ Hydration Risk: Don't use Date.now() directly in components. Use useEffect or pass timestamp from server props."
+      },
+      {
+        "selector": "CallExpression[callee.object.name='Math'][callee.property.name='random']",
+        "message": "⚠️ Hydration Risk: Don't use Math.random() directly in components. Use useEffect or generate on server."
+      },
+      {
+        "selector": "NewExpression[callee.name='Date'][arguments.length=0]",
+        "message": "⚠️ Hydration Risk: Don't use new Date() without arguments in render. Use useEffect or pass timestamp from server."
+      }
+    ],
+    "no-restricted-globals": [
+      "error",
+      {
+        "name": "window",
+        "message": "⚠️ Hydration Risk: Access 'window' inside useEffect or use safeWindow from lib/safeWindow.ts"
+      },
+      {
+        "name": "document",
+        "message": "⚠️ Hydration Risk: Access 'document' inside useEffect or use safeDocument from lib/safeWindow.ts"
+      },
+      {
+        "name": "localStorage",
+        "message": "⚠️ Hydration Risk: Access 'localStorage' inside useEffect or use safeLocalStorage from lib/safeWindow.ts"
+      },
+      {
+        "name": "sessionStorage",
+        "message": "⚠️ Hydration Risk: Access 'sessionStorage' inside useEffect or use safeSessionStorage from lib/safeWindow.ts"
+      },
+      {
+        "name": "navigator",
+        "message": "⚠️ Hydration Risk: Access 'navigator' inside useEffect or use safeNavigator from lib/safeWindow.ts"
+      }
+    ]
+  }
 }

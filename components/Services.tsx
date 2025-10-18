@@ -1,53 +1,53 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import { useMemo } from 'react';
 
 const Services = () => {
   const services = useMemo(() => [
     {
-      title: "Marketing d&apos;influence",
+      title: "Marketing d'influence",
       description: "Accompagnement ponctuel ou annuel avec nos équipes de gestion de projet et planning stratégique pour des campagnes créatives.",
       icon: "/baff.png",
-      gradient: "linear-gradient(135deg, #8b5cf6 0%, #ffffff 100%)"
+      features: ["Campagnes créatives", "Planning stratégique", "Gestion de projet"]
     },
     {
       title: "Social Media",
       description: "Charte éditoriale, social média management, community management et modération pour optimiser vos réseaux sociaux.",
       icon: "/social.png",
-      gradient: "linear-gradient(135deg, #8b5cf6 0%, #ffffff 100%)"
+      features: ["Charte éditoriale", "Community management", "Modération"]
     },
     {
       title: "Brand Content",
       description: "Accompagnement dans vos productions de contenus photos et vidéos pour renforcer votre identité de marque.",
       icon: "/medal.png",
-      gradient: "linear-gradient(135deg, #8b5cf6 0%, #ffffff 100%)"
+      features: ["Production photo", "Production vidéo", "Identité de marque"]
     },
     {
-      title: "L&apos;organisation d&apos;événement",
-      description: "Organisation complète d&apos;événements, gestion logistique, coordination des prestataires et mise en place d&apos;expériences mémorables.",
+      title: "Organisation d'événement",
+      description: "Organisation complète d'événements, gestion logistique, coordination des prestataires et mise en place d'expériences mémorables.",
       icon: "/calendar.png",
-      gradient: "linear-gradient(135deg, #8b5cf6 0%, #ffffff 100%)"
+      features: ["Gestion logistique", "Coordination prestataires", "Expériences mémorables"]
     },
     {
       title: "Expérience de marque",
-      description: "Organisation d&apos;événements locaux, set design, recherche de prestataires et logistique pour des événements impactants.",
+      description: "Organisation d'événements locaux, set design, recherche de prestataires et logistique pour des événements impactants.",
       icon: "/target.png",
-      gradient: "linear-gradient(135deg, #8b5cf6 0%, #ffffff 100%)"
+      features: ["Set design", "Événements locaux", "Recherche prestataires"]
     },
     {
       title: "Stratégie et formations",
       description: "Accompagnement dans vos réflexions stratégiques et création de guidelines locales Influence/Social Média.",
       icon: "/key.png",
-      gradient: "linear-gradient(135deg, #8b5cf6 0%, #ffffff 100%)"
+      features: ["Réflexions stratégiques", "Guidelines locales", "Formations"]
     },
     {
       title: "Développement Web",
       description: "Création de sites web modernes, applications web et solutions digitales sur mesure pour votre entreprise.",
       icon: "/dev.png",
-      gradient: "linear-gradient(135deg, #8b5cf6 0%, #ffffff 100%)"
+      features: ["Sites web modernes", "Applications web", "Solutions sur mesure"]
     }
   ], []);
 
@@ -56,26 +56,19 @@ const Services = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.15,
         delayChildren: 0.2,
       },
     },
   }), []);
 
-  const cardVariants = useMemo(() => ({
-    hidden: { 
-      y: 60, 
-      opacity: 0,
-      scale: 0.8,
-      rotateX: -15
-    },
+  const itemVariants = useMemo(() => ({
+    hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
-      scale: 1,
-      rotateX: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.6,
         ease: [0.25, 0.46, 0.45, 0.94],
       },
     },
@@ -83,183 +76,159 @@ const Services = () => {
 
   return (
     <section id="services" className="py-20 bg-white relative overflow-hidden">
-      {/* Subtle Background Pattern */}
+      {/* Subtle Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 25% 25%, #8b5cf6 2px, transparent 2px),
-                           radial-gradient(circle at 75% 75%, #8b5cf6 2px, transparent 2px)`,
-          backgroundSize: '60px 60px',
-          backgroundPosition: '0 0, 30px 30px'
+          backgroundImage: `radial-gradient(circle at 20% 20%, #9b5de5 1px, transparent 1px),
+                           radial-gradient(circle at 80% 80%, #f15bb5 1px, transparent 1px)`,
+          backgroundSize: '100px 100px',
+          backgroundPosition: '0 0, 50px 50px'
         }} />
       </div>
+
+      {/* Floating Elements */}
+      <div className="absolute top-20 left-10 w-20 h-20 bg-purple-100/30 rounded-full blur-xl animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-32 h-32 bg-pink-100/30 rounded-full blur-xl animate-pulse delay-1000"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 text-purple-700 rounded-full font-medium mb-6"
-            whileHover={{ scale: 1.05 }}
-          >
-          
-          </motion.div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Nos <span className="text-gradient">Offres</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Découvrez nos services complets pour transformer votre présence digitale et atteindre vos objectifs.
-          </p>
-        </motion.div>
-
-        {/* Modern Responsive Grid */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {services.map((service, index) => (
+          {/* Left Column - Services Grid */}
             <motion.div
-              key={index}
-              className="relative"
-              variants={cardVariants}
-            >
-              {/* Modern Card Container with Glassmorphism */}
-              <div 
-                className="relative w-full h-[320px] rounded-3xl overflow-hidden backdrop-blur-sm"
-                style={{
-                  background: `linear-gradient(135deg, 
-                    rgba(139, 92, 246, 0.1) 0%, 
-                    rgba(255, 255, 255, 0.2) 50%, 
-                    rgba(139, 92, 246, 0.05) 100%)`,
-                  boxShadow: `
-                    0 25px 50px rgba(139, 92, 246, 0.15),
-                    0 12px 24px rgba(0, 0, 0, 0.1),
-                    0 4px 8px rgba(0, 0, 0, 0.05),
-                    inset 0 1px 0 rgba(255, 255, 255, 0.3),
-                    inset 0 -1px 0 rgba(139, 92, 246, 0.1)
-                  `,
-                  border: '1px solid rgba(255, 255, 255, 0.2)',
-                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                  transformStyle: 'preserve-3d'
-                }}
-              >
-              {/* Content */}
-                <div className="relative h-full p-6 flex">
-                  {/* Left Content */}
-                  <div className="flex-1 flex flex-col justify-between pr-6">
-                    {/* Title */}
-                    <motion.h3 
-                      className="text-xl font-bold text-gray-900 mb-4 leading-tight drop-shadow-sm"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.1 + 0.3, duration: 0.6 }}
-                      viewport={{ once: true }}
-                      style={{ 
-                        textShadow: '0 2px 4px rgba(0,0,0,0.1)',
-                        fontWeight: '700'
-                      }}
-                    >
-                {service.title}
-                    </motion.h3>
-                    
-                    {/* Description */}
-                    <motion.p 
-                      className="text-gray-700 leading-relaxed text-sm flex-grow mb-6"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.1 + 0.4, duration: 0.6 }}
-                    viewport={{ once: true }}
-                  >
-                      {service.description}
-                    </motion.p>
-
-                    {/* Demander un devis Button with Enhanced Effects */}
-              <motion.button
-                      className="w-full px-4 py-3 bg-gray-900 text-white font-semibold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 text-sm relative overflow-hidden"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ 
-                        delay: index * 0.1 + 0.6, 
-                        duration: 0.6 
-                      }}
-                      viewport={{ once: true }}
-                      style={{ 
-                        transformStyle: 'preserve-3d',
-                        boxShadow: `
-                          0 8px 16px rgba(0, 0, 0, 0.2),
-                          0 4px 8px rgba(0, 0, 0, 0.1),
-                          inset 0 1px 0 rgba(255, 255, 255, 0.1)
-                        `
-                      }}
-                    >
-                      Demander un devis
-                      <ArrowRight className="w-4 h-4 relative z-10" />
-              </motion.button>
-                  </div>
-
-
-                  {/* Right Side - Enhanced Icon with Pulse */}
-                  <div className="flex justify-center items-center w-32">
-                    <motion.div
-                      className="relative"
-                      initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
-                      whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                      transition={{ 
-                        delay: index * 0.1 + 0.5, 
-                        duration: 0.8,
-                        ease: [0.25, 0.46, 0.45, 0.94]
-                      }}
-                      viewport={{ once: true }}
-                      style={{ transformStyle: 'preserve-3d' }}
-                    >
-                      <div className="w-36 h-36 sm:w-36 sm:h-36 relative">
+            className="relative lg:order-1 w-full"
+            variants={itemVariants}
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {services.map((service, index) => (
+                <div
+                  key={index}
+                  className="relative bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+                >
+                  {/* Service Icon */}
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 relative">
                         <Image
                           src={service.icon}
                           alt={service.title}
                           fill
-                          className="object-contain drop-shadow-2xl"
+                        className="object-contain"
                           quality={75}
-                          loading="lazy"
-                          sizes="(max-width: 640px) 144px, 144px"
-                          placeholder="blur"
-                          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-                        />
+                      />
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900">
+                      {service.title}
+                    </h3>
+                  </div>
+                  
+                  {/* Service Features */}
+                  <div className="space-y-2">
+                    {service.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center gap-3">
+                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                        <span className="text-gray-700 text-sm">{feature}</span>
                       </div>
-                    </motion.div>
+                    ))}
                   </div>
                 </div>
-
-                {/* Static Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-purple-100/5 rounded-3xl" />
-                
-                {/* Floating Particles Effect */}
-                <div className="absolute inset-0 overflow-hidden rounded-3xl">
-                  <div className="absolute top-4 left-4 w-2 h-2 bg-purple-400/20 rounded-full animate-pulse" />
-                  <div className="absolute top-8 right-8 w-1 h-1 bg-white/30 rounded-full animate-ping" />
-                  <div className="absolute bottom-6 left-8 w-1.5 h-1.5 bg-purple-300/30 rounded-full animate-pulse" />
-                  <div className="absolute bottom-4 right-4 w-1 h-1 bg-white/20 rounded-full animate-ping" />
-                </div>
+              ))}
               </div>
             </motion.div>
-          ))}
+
+          {/* Right Column - Purple Speech Bubble Card */}
+          <motion.div
+            className="relative lg:order-2"
+            variants={itemVariants}
+          >
+            <div className="relative bg-gradient-to-br from-purple-600 to-purple-700 rounded-3xl p-8 shadow-2xl">
+              {/* Speech bubble tail */}
+              <div className="absolute -left-4 top-8 w-0 h-0 border-t-[20px] border-b-[20px] border-r-[20px] border-transparent border-r-purple-600"></div>
+              
+              {/* Tab */}
+              <motion.div
+                className="absolute -top-3 left-6 bg-purple-500 rounded-full px-4 py-2 text-white text-sm font-medium"
+                initial={{ opacity: 0, y: -10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                viewport={{ once: true }}
+              >
+                Nos Offres
         </motion.div>
 
-        {/* Bottom CTA */}
+              {/* Content */}
         <motion.div
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
+                className="text-white space-y-6"
+                initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
         >
-         
+                <h2 className="text-2xl md:text-3xl font-bold leading-tight">
+                  Des Solutions Complètes pour Votre Croissance
+                </h2>
+                
+                <p className="text-purple-100 leading-relaxed">
+                  De la stratégie à l'exécution, nous vous accompagnons avec une approche 
+                  créative et des solutions sur mesure pour transformer votre présence digitale 
+                  et atteindre vos objectifs business.
+                </p>
+
+                <div className="space-y-4">
+                  <motion.div
+                    className="flex items-center gap-3"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="w-2 h-2 bg-purple-300 rounded-full"></div>
+                    <span className="text-purple-100">Stratégie personnalisée</span>
+                  </motion.div>
+                  <motion.div
+                    className="flex items-center gap-3"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.7 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="w-2 h-2 bg-purple-300 rounded-full"></div>
+                    <span className="text-purple-100">Exécution créative</span>
+                  </motion.div>
+                  <motion.div
+                    className="flex items-center gap-3"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.8 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="w-2 h-2 bg-purple-300 rounded-full"></div>
+                    <span className="text-purple-100">Résultats mesurables</span>
+                  </motion.div>
+                </div>
+              </motion.div>
+
+              {/* Bottom elements */}
+              <motion.div
+                className="flex items-center justify-between mt-8"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.9 }}
+                viewport={{ once: true }}
+              >
+                <div className="bg-white/20 rounded-full px-3 py-1 text-white text-sm">
+                  Cliq
+                </div>
+                <button className="bg-black text-white rounded-full px-6 py-3 font-semibold flex items-center gap-2 hover:bg-gray-800 transition-colors">
+                  DÉCOUVRIR NOS SERVICES
+                  <ArrowUpRight className="w-4 h-4" />
+                </button>
+              </motion.div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

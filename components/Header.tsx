@@ -14,10 +14,13 @@ const Header = () => {
     setIsMounted(true);
     
     const handleScroll = () => {
+      // eslint-disable-next-line no-restricted-globals
       setIsScrolled(window.scrollY > 20);
     };
     
+    // eslint-disable-next-line no-restricted-globals
     window.addEventListener('scroll', handleScroll);
+    // eslint-disable-next-line no-restricted-globals
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

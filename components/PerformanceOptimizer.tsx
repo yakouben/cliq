@@ -11,8 +11,11 @@ const PerformanceOptimizer = () => {
     // Optimize animations for performance
     const optimizeAnimations = () => {
       // Reduce motion for users who prefer it
+      // eslint-disable-next-line no-restricted-globals
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        // eslint-disable-next-line no-restricted-globals
         document.documentElement.style.setProperty('--animation-duration', '0.01ms');
+        // eslint-disable-next-line no-restricted-globals
         document.documentElement.style.setProperty('--animation-iteration-count', '1');
       }
     };
@@ -33,6 +36,7 @@ const PerformanceOptimizer = () => {
       // Simple performance monitoring without external dependencies
       const startTime = performance.now();
       
+      // eslint-disable-next-line no-restricted-globals
       window.addEventListener('load', () => {
         const loadTime = performance.now() - startTime;
         console.log(`Page load time: ${loadTime.toFixed(2)}ms`);

@@ -1,14 +1,10 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Twitter, ArrowUp } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 import Image from 'next/image';
 
 const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   const services = [
     "Marketing d'influence",
     "Social Media", 
@@ -18,145 +14,103 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, name: "Facebook", href: "https://facebook.com/cliqevents", color: "hover:text-blue-400" },
-    { icon: Instagram, name: "Instagram", href: "https://instagram.com/cliqevents_off", color: "hover:text-pink-400" },
-    { icon: Linkedin, name: "LinkedIn", href: "https://linkedin.com/company/cliqevents", color: "hover:text-blue-500" },
-    { icon: Twitter, name: "Twitter", href: "https://twitter.com/cliqevents", color: "hover:text-blue-300" }
+    { icon: Facebook, name: "Facebook", href: "https://facebook.com/cliqevents" },
+    { icon: Instagram, name: "Instagram", href: "https://instagram.com/cliqevents_off" },
+    { icon: Linkedin, name: "LinkedIn", href: "https://linkedin.com/company/cliqevents" },
+    { icon: Twitter, name: "Twitter", href: "https://twitter.com/cliqevents" }
   ];
 
   return (
-    <footer id="footer" className="relative bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Main Footer Content */}
-        <div className="py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Left Column - Company Info */}
-            <motion.div
-              className="space-y-8"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              {/* Logo */}
-              <div className="w-16 h-16 rounded-xl flex items-center justify-center bg-white/10 backdrop-blur-sm">
+    <footer id="footer" className="relative gradient-purple text-white">
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        {/* Main Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
+          {/* Company Info */}
+          <div className="space-y-6">
+            <div className="flex items-center space-x-3">
+              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
                 <Image 
                   src="/logo-without-bg.png" 
                   alt="Cliq Logo" 
-                  width={64} 
-                  height={64}
+                  width={32} 
+                  height={32}
                   className="object-contain"
-                  quality={85}
                 />
               </div>
-
-              {/* Company Description */}
-              <p className="text-white text-lg leading-relaxed max-w-md">
-                Agence 360° spécialisée en marketing d&apos;influence, communication et branding premium.
-              </p>
-
-              {/* Contact Info */}
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-purple-300 flex-shrink-0" />
-                  <a href="mailto:cliqevents3@gmail.com" className="text-white hover:text-purple-300 transition-colors">
-                    cliqevents3@gmail.com
-                  </a>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-purple-300 flex-shrink-0" />
-                  <a href="tel:+213540017730" className="text-white hover:text-purple-300 transition-colors">
-                    +213 540 017 730
-                  </a>
-                </div>
-                <div className="flex items-center gap-3">
-                  <MapPin className="w-5 h-5 text-purple-300 flex-shrink-0" />
-                  <span className="text-white">Draria Alger, Algérie</span>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Right Column - Services */}
-            <motion.div
-              className="space-y-6"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-2xl font-bold text-white">Services</h3>
-              <ul className="space-y-3">
-                {services.map((service, index) => (
-                  <motion.li 
-                    key={index}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <a
-                      href="#services"
-                      className="text-white hover:text-purple-300 transition-colors duration-200 block text-lg"
-                    >
-                      {service}
-                    </a>
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Bottom Footer */}
-        <div className="py-8 border-t border-white/20">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-            {/* Copyright */}
-            <motion.div
-              className="flex items-center gap-3"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
+              <span className="text-2xl font-bold">Cliq</span>
+            </div>
             
-              <p className="text-white text-sm">
-                © 2025 Cliq events droits réservés.
-              </p>
-            </motion.div> 
+            <p className="text-white/90 text-base leading-relaxed max-w-sm">
+              Agence 360° spécialisée en marketing d&apos;influence, communication et branding premium.
+            </p>
 
-            {/* Social Links */}
-            <motion.div
-              className="flex items-center gap-4"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <span className="text-white text-sm">Suivez-nous :</span>
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3">
+                <Mail className="w-4 h-4 text-white/80" />
+                <a href="mailto:cliqevents3@gmail.com" className="text-white/90 hover:text-white transition-colors text-sm">
+                  cliqevents3@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Phone className="w-4 h-4 text-white/80" />
+                <a href="tel:+213540017730" className="text-white/90 hover:text-white transition-colors text-sm">
+                  +213 540 017 730
+                </a>
+              </div>
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-4 h-4 text-white/80" />
+                <span className="text-white/90 text-sm">Draria Alger, Algérie</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Services */}
+          <div className="space-y-6">
+            <h3 className="text-xl font-semibold text-white">Services</h3>
+            <ul className="space-y-3">
+              {services.map((service, index) => (
+                <li key={index}>
+                  <a
+                    href="#services"
+                    className="text-white/90 hover:text-white transition-colors text-sm block"
+                  >
+                    {service}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Social & Newsletter */}
+          <div className="space-y-6">
+            <h3 className="text-xl font-semibold text-white">Suivez-nous</h3>
+            <div className="flex space-x-3">
               {socialLinks.map((social, index) => (
-                <motion.a
+                <a
                   key={index}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 border border-white/30 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-purple-600 transition-all duration-300"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center text-white/80 hover:text-white transition-all duration-200"
                   aria-label={social.name}
                 >
                   <social.icon className="w-5 h-5" />
-                </motion.a>
+                </a>
               ))}
-            </motion.div>
+            </div>
+          </div>
+        </div>
 
-        
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-white/20">
+          <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
+            <p className="text-white/70 text-sm">
+              © 2025 Cliq Events. Tous droits réservés.
+            </p>
+            <div className="flex items-center space-x-6 text-sm text-white/70">
+              <a href="#" className="hover:text-white transition-colors">Mentions légales</a>
+              <a href="#" className="hover:text-white transition-colors">Politique de confidentialité</a>
+            </div>
           </div>
         </div>
       </div>

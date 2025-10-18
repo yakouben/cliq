@@ -111,7 +111,7 @@ const Hero = () => {
               variants={itemVariants}
               style={{ y, opacity }}
             >
-              Un cliq, est votre{' '}
+              Un cliq, et votre{' '}
               <span className="relative inline-block align-baseline">
                 <motion.span
                   className="text-gradient inline-block relative z-10"

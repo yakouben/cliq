@@ -1,4 +1,6 @@
+/* eslint-disable no-restricted-globals */
 // Performance monitoring utilities
+// Note: This file is called inside useEffect, so browser API access is safe
 
 export const measurePerformance = (name: string, fn: () => void) => {
   if (typeof window !== 'undefined' && 'performance' in window) {
