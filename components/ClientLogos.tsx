@@ -10,7 +10,6 @@ const ClientLogos = () => {
     { name: "Client 1", logo: "/client1.jpg" },
     { name: "Client 2", logo: "/client2.jpg" },
     { name: "Client 3", logo: "/client3.jpg" },
-    { name: "Client 4", logo: "/client4.jpg" },
     { name: "Client 5", logo: "/client5.jpg" },
     { name: "Client 6", logo: "/client6.jpg" },
     { name: "Client 7", logo: "/client7.jpg" },

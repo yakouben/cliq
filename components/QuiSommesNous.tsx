@@ -22,7 +22,6 @@ const QuiSommesNous = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94],
       },
     },
   };
@@ -42,10 +41,16 @@ const QuiSommesNous = () => {
             className="relative lg:order-1 w-full"
             variants={itemVariants}
           >
-            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl border-2 sm:border-4 border-purple-500 w-full">
+            <motion.div
+              className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-purple-500 w-full"
+              whileHover={{ 
+                scale: 1.02,
+                transition: { duration: 0.3 }
+              }}
+            >
               <div 
                 style={{
-                  padding: '56.25% 0 0 0',
+                  padding: '75% 0 0 0',
                   position: 'relative',
                   width: '100%'
                 }}
@@ -61,12 +66,12 @@ const QuiSommesNous = () => {
                     left: 0,
                     width: '100%',
                     height: '100%',
-                    borderRadius: '12px'
+                    borderRadius: '20px'
                   }} 
                   title="À propos de Cliq"
                 />
               </div>
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* Right Column - Purple Speech Bubble Card */}
@@ -136,7 +141,17 @@ const QuiSommesNous = () => {
                     viewport={{ once: true }}
                   >
                     <div className="w-2 h-2 bg-purple-300 rounded-full"></div>
-                    <span className="text-purple-100 text-sm sm:text-base">Événements & Développement Web</span>
+                    <span className="text-purple-100 text-sm sm:text-base">Événements</span>
+                  </motion.div>
+                  <motion.div
+                    className="flex items-center gap-3"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.9 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="w-2 h-2 bg-purple-300 rounded-full"></div>
+                    <span className="text-purple-100 text-sm sm:text-base">Développement Web</span>
                   </motion.div>
                 </div>
               </motion.div>

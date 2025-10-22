@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, MessageCircle } from 'lucide-react';
 import Image from 'next/image';
 
 const Footer = () => {
@@ -14,10 +14,18 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, name: "Facebook", href: "https://facebook.com/cliqevents" },
-    { icon: Instagram, name: "Instagram", href: "https://instagram.com/cliqevents_off" },
-    { icon: Linkedin, name: "LinkedIn", href: "https://linkedin.com/company/cliqevents" },
-    { icon: Twitter, name: "Twitter", href: "https://twitter.com/cliqevents" }
+    { 
+      icon: MessageCircle, 
+      name: "WhatsApp", 
+      href: "https://wa.me/213558497591",
+      text: "+213 558 49 75 91"
+    },
+    { 
+      icon: Instagram, 
+      name: "Instagram", 
+      href: "https://www.instagram.com/cliqevents_off?igsh=MTlqNW43OXpwMGE2eQ==",
+      text: "@cliqevents_off"
+    }
   ];
 
   return (
@@ -54,7 +62,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-white/80" />
                 <a href="tel:+213540017730" className="text-white/90 hover:text-white transition-colors text-sm">
-                  +213 540 017 730
+                  +213 558 49 75 91
                 </a>
               </div>
               <div className="flex items-center space-x-3">
@@ -81,20 +89,26 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Social & Newsletter */}
+          {/* Social & Contact */}
           <div className="space-y-6">
-            <h3 className="text-xl font-semibold text-white">Suivez-nous</h3>
-            <div className="flex space-x-3">
+            <h3 className="text-xl font-semibold text-white">Contactez-nous</h3>
+            <div className="space-y-4">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center text-white/80 hover:text-white transition-all duration-200"
+                  className="flex items-center space-x-3 p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-200 group"
                   aria-label={social.name}
                 >
-                  <social.icon className="w-5 h-5" />
+                  <div className="w-10 h-10 bg-white/20 group-hover:bg-white/30 rounded-lg flex items-center justify-center text-white/80 group-hover:text-white transition-all duration-200">
+                    <social.icon className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-white font-medium text-sm">{social.name}</p>
+                    <p className="text-white/80 text-sm">{social.text}</p>
+                  </div>
                 </a>
               ))}
             </div>
