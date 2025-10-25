@@ -13,12 +13,7 @@ const Services = () => {
       icon: "/baff.png",
       features: ["Campagnes créatives", "Planning stratégique", "Gestion de projet"]
     },
-    {
-      title: "Social Media",
-      description: "Charte éditoriale, social média management, community management et modération pour optimiser vos réseaux sociaux.",
-      icon: "/social.png",
-      features: ["Charte éditoriale", "Community management", "Modération"]
-    },
+    
     {
       title: "Brand Content",
       description: "Accompagnement dans vos productions de contenus photos et vidéos pour renforcer votre identité de marque.",
@@ -222,10 +217,15 @@ const Services = () => {
                 <div className="bg-white/20 rounded-full px-3 py-1 text-white text-sm">
                   Cliq
                 </div>
-                <button className="bg-black text-white rounded-full px-6 py-3 font-semibold flex items-center gap-2 hover:bg-gray-800 transition-colors">
+                <motion.a
+                  href="#qui-sommes-nous"
+                  className="bg-black text-white rounded-full px-6 py-3 font-semibold flex items-center gap-2 hover:bg-gray-800 transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
                   DÉCOUVRIR NOS SERVICES
                   <ArrowUpRight className="w-4 h-4" />
-                </button>
+                </motion.a>
               </motion.div>
             </div>
           </motion.div>

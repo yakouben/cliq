@@ -187,7 +187,8 @@ const Hero = () => {
               className="hidden lg:flex flex-row gap-6 justify-center lg:justify-start"
               variants={itemVariants}
             >
-              <motion.button
+              <motion.a
+                href="#qui-sommes-nous"
                 className="group px-8 py-4 gradient-purple text-white font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-3 text-base"
                 whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.95 }}
@@ -197,16 +198,17 @@ const Hero = () => {
               >
                 Découvrir nos services
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
+              </motion.a>
 
-              <motion.button
+              <motion.a
+                href="#nos-realisations"
                 className="group px-8 py-4 bg-white/90 backdrop-blur-sm text-purple-600 font-bold rounded-xl border-2 border-purple-600 hover:bg-purple-600 hover:text-white transition-all duration-300 flex items-center justify-center gap-3 text-base shadow-lg"
                 whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Play className="w-5 h-5" />
                 Voir nos réalisations
-              </motion.button>
+              </motion.a>
             </motion.div>
           </div>
 
@@ -273,7 +275,8 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.button
+          <motion.a
+            href="#qui-sommes-nous"
             className="group px-8 py-4 gradient-purple text-white font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-3 text-base"
             whileHover={{ scale: 1.05, y: -3 }}
             whileTap={{ scale: 0.95 }}
@@ -283,16 +286,17 @@ const Hero = () => {
           >
             Découvrir nos services
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </motion.button>
+          </motion.a>
 
-          <motion.button
+          <motion.a
+            href="#nos-realisations"
             className="group px-8 py-4 bg-white/90 backdrop-blur-sm text-purple-600 font-bold rounded-xl border-2 border-purple-600 hover:bg-purple-600 hover:text-white transition-all duration-300 flex items-center justify-center gap-3 text-base shadow-lg"
             whileHover={{ scale: 1.05, y: -3 }}
             whileTap={{ scale: 0.95 }}
           >
             <Play className="w-5 h-5" />
             Voir nos réalisations
-          </motion.button>
+          </motion.a>
         </motion.div>
 
         {/* Scroll Indicator */}
