@@ -102,5 +102,5 @@ body {
 }
 
 .hero-background {
-  background: radial-gradient(ellipse at top, rgba(106, 13, 173, 0.03) 0%, transparent 70%);
+  background: white;
 }

@@ -2,6 +2,8 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { MotionValue, motion, useScroll, useTransform } from "motion/react";
 import { cn } from "@/lib/utils";
+import { safeWindow } from "@/lib/safeWindow";
+import Image from "next/image";
 import {
   IconBrightnessDown,
   IconBrightnessUp,
@@ -49,20 +51,22 @@ export const MacbookScroll = ({
   useEffect(() => {
     setIsHydrated(true);
     const checkScreenSize = () => {
-      if (typeof window !== 'undefined') {
-        // eslint-disable-next-line no-restricted-globals
-        const width = window.innerWidth;
+      if (safeWindow) {
+        const width = safeWindow.innerWidth;
         setIsMobile(width < 768);
         setIsSmall(width < 1024); // sm and md devices
       }
     };
     
     checkScreenSize();
-    // eslint-disable-next-line no-restricted-globals
-    window.addEventListener('resize', checkScreenSize);
-    
-    // eslint-disable-next-line no-restricted-globals
-    return () => window.removeEventListener('resize', checkScreenSize);
+    if (safeWindow) {
+      safeWindow.addEventListener('resize', checkScreenSize);
+      return () => {
+        if (safeWindow) {
+          safeWindow.removeEventListener('resize', checkScreenSize);
+        }
+      };
+    }
   }, []);
 
   const scaleX = useTransform(
@@ -184,10 +188,11 @@ export const Lid = ({
       >
         <div className="absolute inset-0 rounded-lg bg-[#272729]" />
         {src ? (
-          <img
+          <Image
             src={src}
             alt="macbook screen content"
-            className="absolute inset-0 h-full w-full rounded-lg object-cover object-left-top z-10"
+            fill
+            className="rounded-lg object-cover object-left-top z-10"
             onError={(e) => {
               console.error('Image failed to load:', src);
               e.currentTarget.style.display = 'none';

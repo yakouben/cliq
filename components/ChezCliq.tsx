@@ -65,11 +65,11 @@ const ChezCliq = () => {
                 viewport={{ once: true }}
               >
                 <h2 className="text-2xl md:text-3xl font-bold leading-tight">
-                  L'Esprit Cliq : Créativité, Innovation & Passion
+                  L&apos;Esprit Cliq : Créativité, Innovation & Passion
                 </h2>
                 
                 <p className="text-purple-100 leading-relaxed">
-                  Découvrez l'univers unique de Cliq, où chaque projet est une nouvelle aventure créative. 
+                  Découvrez l&apos;univers unique de Cliq, où chaque projet est une nouvelle aventure créative. 
                   Notre équipe passionnée transforme vos idées en expériences digitales exceptionnelles.
                 </p>
 

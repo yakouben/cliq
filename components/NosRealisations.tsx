@@ -36,7 +36,7 @@ const RealizationsSection = () => {
 
   if (!isClient) {
     return (
-      <section className="py-20 bg-gray-50 relative overflow-hidden">
+      <section className="py-20 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Right - Purple Speech Bubble Card (First on mobile) */}
@@ -120,7 +120,7 @@ const RealizationsSection = () => {
   }
 
   return (
-    <section className="py-20 bg-gray-50 relative overflow-hidden">
+    <section className="py-20 bg-white relative overflow-hidden">
       {/* Subtle Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{

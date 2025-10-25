@@ -121,7 +121,7 @@ const QuiSommesNous = () => {
                     viewport={{ once: true }}
                   >
                     <div className="w-2 h-2 bg-purple-300 rounded-full"></div>
-                    <span className="text-purple-100 text-sm sm:text-base">Marketing d'influence</span>
+                    <span className="text-purple-100 text-sm sm:text-base">Marketing d&apos;influence</span>
                   </motion.div>
                   <motion.div
                     className="flex items-center gap-3"
@@ -167,10 +167,17 @@ const QuiSommesNous = () => {
                 <div className="bg-white/20 rounded-full px-2 sm:px-3 py-1 text-white text-xs sm:text-sm">
                   Cliq
                 </div>
-                <button className="bg-black text-white rounded-full px-4 sm:px-6 py-2 sm:py-3 font-semibold flex items-center gap-2 hover:bg-gray-800 transition-colors text-xs sm:text-sm">
+                <motion.button
+                  className="bg-gradient-to-br from-purple-600 to-purple-700 text-white rounded-full px-4 sm:px-6 py-2 sm:py-3 font-semibold flex items-center gap-2 hover:from-purple-700 hover:to-purple-800 transition-all duration-300 text-xs sm:text-sm"
+                  whileHover={{ 
+                    scale: 1.05,
+                    transition: { duration: 0.2 }
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                >
                   DEMANDER UN DEVIS
                   <ArrowUpRight className="w-3 h-3 sm:w-4 sm:h-4" />
-                </button>
+                </motion.button>
               </motion.div>
             </div>
           </motion.div>

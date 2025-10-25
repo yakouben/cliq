@@ -117,14 +117,10 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/20">
-          <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
+          <div className="flex items-center justify-center">
             <p className="text-white/70 text-sm">
               © 2025 Cliq Events. Tous droits réservés.
             </p>
-            <div className="flex items-center space-x-6 text-sm text-white/70">
-              <a href="#" className="hover:text-white transition-colors">Mentions légales</a>
-              <a href="#" className="hover:text-white transition-colors">Politique de confidentialité</a>
-            </div>
           </div>
         </div>
       </div>

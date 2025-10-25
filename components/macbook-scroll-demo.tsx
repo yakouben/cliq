@@ -1,8 +1,9 @@
 import { MacbookScroll } from "@/components/ui/macbook-scroll"
+import Image from "next/image"
 
 export default function MacbookScrollDemo() {
   return (
-    <div className="w-full overflow-hidden bg-gradient-to-br from-purple-50 via-white to-purple-50 dark:bg-gradient-to-br dark:from-purple-950 dark:via-[#0B0B0F] dark:to-purple-950 pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-0 relative">
+    <div className="w-full overflow-hidden bg-white pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-0 relative">
       <MacbookScroll
         title={
           <div className="text-center space-y-3 sm:space-y-4 px-4">
@@ -24,7 +25,7 @@ export default function MacbookScrollDemo() {
           </div>
         }
         badge={
-          <a href="https://instagram.com/cliqevents" target="_blank" rel="noopener noreferrer" className="group">
+          <a href="https://www.instagram.com/cliqevents_off?igsh=MTlqNW43OXpwMGE2eQ==" target="_blank" rel="noopener noreferrer" className="group">
             <div className="relative">
               <Badge className="h-12 w-12 sm:h-14 sm:w-14 -rotate-12 transform group-hover:rotate-0 transition-transform duration-300" />
               <div className="absolute -top-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center">
@@ -44,10 +45,11 @@ export default function MacbookScrollDemo() {
 const Badge = ({ className }: { className?: string }) => {
   return (
     <div className={`${className} relative overflow-hidden rounded-xl bg-gradient-to-br from-purple-100 to-purple-200 p-2 shadow-lg`}>
-      <img
+      <Image
         src="/logo-without-bg.png"
         alt="Cliq Logo"
-        className="object-contain w-full h-full"
+        fill
+        className="object-contain"
       />
       <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-xl"></div>
     </div>
