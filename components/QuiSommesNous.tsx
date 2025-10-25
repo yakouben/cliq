@@ -95,46 +95,94 @@ const QuiSommesNous = () => {
                   aspects du marketing digital et de la communication.
                 </p>
 
-                <div className="space-y-3 sm:space-y-4">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3">
                   <motion.div
-                    className="flex items-center gap-3"
+                    className="flex items-center gap-1.5 sm:gap-2 bg-white/10 rounded-lg px-2 sm:px-3 py-2 backdrop-blur-sm"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.6 }}
                     viewport={{ once: true }}
+                    whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.15)' }}
                   >
-                    <div className="w-2 h-2 bg-purple-300 rounded-full"></div>
-                    <span className="text-purple-100 text-sm sm:text-base">Marketing d&apos;influence</span>
+                    <div className="w-1.5 h-1.5 bg-purple-300 rounded-full flex-shrink-0"></div>
+                    <span className="text-purple-100 text-[10px] sm:text-xs md:text-sm font-bold">Marketing d&apos;influence</span>
                   </motion.div>
                   <motion.div
-                    className="flex items-center gap-3"
+                    className="flex items-center gap-1.5 sm:gap-2 bg-white/10 rounded-lg px-2 sm:px-3 py-2 backdrop-blur-sm"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.7 }}
                     viewport={{ once: true }}
+                    whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.15)' }}
                   >
-                    <div className="w-2 h-2 bg-purple-300 rounded-full"></div>
-                    <span className="text-purple-100 text-sm sm:text-base">Social Media & Brand Content</span>
+                    <div className="w-1.5 h-1.5 bg-purple-300 rounded-full flex-shrink-0"></div>
+                    <span className="text-purple-100 text-[10px] sm:text-xs md:text-sm font-bold">Brand Content</span>
                   </motion.div>
                   <motion.div
-                    className="flex items-center gap-3"
+                    className="flex items-center gap-1.5 sm:gap-2 bg-white/10 rounded-lg px-2 sm:px-3 py-2 backdrop-blur-sm"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.75 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.15)' }}
+                  >
+                    <div className="w-1.5 h-1.5 bg-purple-300 rounded-full flex-shrink-0"></div>
+                    <span className="text-purple-100 text-[10px] sm:text-xs md:text-sm font-bold">Événements</span>
+                  </motion.div>
+                  <motion.div
+                    className="flex items-center gap-1.5 sm:gap-2 bg-white/10 rounded-lg px-2 sm:px-3 py-2 backdrop-blur-sm"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.8 }}
                     viewport={{ once: true }}
+                    whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.15)' }}
                   >
-                    <div className="w-2 h-2 bg-purple-300 rounded-full"></div>
-                    <span className="text-purple-100 text-sm sm:text-base">Événements</span>
+                    <div className="w-1.5 h-1.5 bg-purple-300 rounded-full flex-shrink-0"></div>
+                    <span className="text-purple-100 text-[10px] sm:text-xs md:text-sm font-bold">Développement Web</span>
                   </motion.div>
                   <motion.div
-                    className="flex items-center gap-3"
+                    className="flex items-center gap-1.5 sm:gap-2 bg-white/10 rounded-lg px-2 sm:px-3 py-2 backdrop-blur-sm"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.85 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.15)' }}
+                  >
+                    <div className="w-1.5 h-1.5 bg-purple-300 rounded-full flex-shrink-0"></div>
+                    <span className="text-purple-100 text-[10px] sm:text-xs md:text-sm font-bold">Création de contenu/UGC</span>
+                  </motion.div>
+                  <motion.div
+                    className="flex items-center gap-1.5 sm:gap-2 bg-white/10 rounded-lg px-2 sm:px-3 py-2 backdrop-blur-sm"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.9 }}
                     viewport={{ once: true }}
+                    whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.15)' }}
                   >
-                    <div className="w-2 h-2 bg-purple-300 rounded-full"></div>
-                    <span className="text-purple-100 text-sm sm:text-base">Développement Web</span>
+                    <div className="w-1.5 h-1.5 bg-purple-300 rounded-full flex-shrink-0"></div>
+                    <span className="text-purple-100 text-[10px] sm:text-xs md:text-sm font-bold">Graphisme</span>
+                  </motion.div>
+                  <motion.div
+                    className="flex items-center gap-1.5 sm:gap-2 bg-white/10 rounded-lg px-2 sm:px-3 py-2 backdrop-blur-sm"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.95 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.15)' }}
+                  >
+                    <div className="w-1.5 h-1.5 bg-purple-300 rounded-full flex-shrink-0"></div>
+                    <span className="text-purple-100 text-[10px] sm:text-xs md:text-sm font-bold">Community Management</span>
+                  </motion.div>
+                  <motion.div
+                    className="flex items-center gap-1.5 sm:gap-2 bg-white/10 rounded-lg px-2 sm:px-3 py-2 backdrop-blur-sm"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 1.0 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.15)' }}
+                  >
+                    <div className="w-1.5 h-1.5 bg-purple-300 rounded-full flex-shrink-0"></div>
+                    <span className="text-purple-100 text-[10px] sm:text-xs md:text-sm font-bold">Film Making</span>
                   </motion.div>
                 </div>
               </motion.div>

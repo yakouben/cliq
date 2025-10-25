@@ -34,7 +34,7 @@ export default function MacbookScrollDemo() {
             </div>
           </a>
         }
-        src={`/cliq-ig.png?v=${Date.now()}`}
+        src={`/cliq-ig.png`}
         showGradient={false}
       />
     </div>

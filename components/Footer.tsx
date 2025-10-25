@@ -7,10 +7,13 @@ import Image from 'next/image';
 const Footer = () => {
   const services = [
     "Marketing d'influence",
-    "Social Media", 
     "Brand Content",
-    "Événementiel",
-    "Développement Web"
+    "Événements",
+    "Développement Web",
+    "Création de contenu/UGC",
+    "Graphisme",
+    "Community Management",
+    "Film Making"
   ];
 
   const socialLinks = [
@@ -75,18 +78,22 @@ const Footer = () => {
           {/* Services */}
           <div className="space-y-6">
             <h3 className="text-xl font-semibold text-white">Services</h3>
-            <ul className="space-y-3">
+            <div className="grid grid-cols-2 gap-2">
               {services.map((service, index) => (
-                <li key={index}>
-                  <a
-                    href="#services"
-                    className="text-white/90 hover:text-white transition-colors text-sm block"
-                  >
+                <motion.a
+                  key={index}
+                  href="#qui-sommes-nous"
+                  className="flex items-center gap-2 bg-white/10 hover:bg-white/20 rounded-lg px-3 py-2 transition-all duration-200 group backdrop-blur-sm"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <div className="w-1.5 h-1.5 bg-white/70 rounded-full flex-shrink-0"></div>
+                  <span className="text-white/90 group-hover:text-white text-xs font-semibold">
                     {service}
-                  </a>
-                </li>
+                  </span>
+                </motion.a>
               ))}
-            </ul>
+            </div>
           </div>
 
           {/* Social & Contact */}
