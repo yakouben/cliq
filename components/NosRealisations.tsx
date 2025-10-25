@@ -27,10 +27,6 @@ const RealizationsSection = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      },
     },
   };
 
@@ -73,7 +69,7 @@ const RealizationsSection = () => {
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-2 h-2 bg-purple-300 rounded-full"></div>
-                      <span className="text-purple-100">Équipe d'experts dédiés</span>
+                      <span className="text-purple-100">Équipe d&apos;experts dédiés</span>
                     </div>
                   </div>
                 </div>
@@ -283,7 +279,7 @@ const RealizationsSection = () => {
                     viewport={{ once: true }}
                   >
                     <div className="w-2 h-2 bg-purple-300 rounded-full"></div>
-                    <span className="text-purple-100">Équipe d'experts dédiés</span>
+                    <span className="text-purple-100">Équipe d&apos;experts dédiés</span>
                   </motion.div>
                 </div>
               </motion.div>

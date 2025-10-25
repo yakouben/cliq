@@ -78,10 +78,6 @@ const NosValeursOptionC = () => {
       opacity: 1,
       scale: 1,
       rotateX: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      },
     },
   }), []);
 
@@ -90,16 +86,11 @@ const NosValeursOptionC = () => {
     visible: {
       pathLength: 1,
       opacity: 0.8,
-      transition: {
-        duration: 3,
-        ease: "easeInOut",
-        delay: 0.5
-      }
     }
   }), []);
 
   return (
-    <section 
+    <motion.section 
       ref={sectionRef}
       id="valeurs" 
       className="py-20 bg-white relative overflow-hidden"
@@ -241,8 +232,7 @@ const NosValeursOptionC = () => {
               whileInView="visible"
               viewport={{ once: true }}
               style={{ 
-                filter: 'drop-shadow(0 4px 8px rgba(139, 92, 246, 0.4))',
-                filter: 'url(#glow)'
+                filter: 'drop-shadow(0 4px 8px rgba(139, 92, 246, 0.4)) url(#glow)'
               }}
             />
             
@@ -617,7 +607,7 @@ const NosValeursOptionC = () => {
           />
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

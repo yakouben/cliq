@@ -73,6 +73,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#6a0dad" />
         <script
           type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
