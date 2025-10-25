@@ -34,7 +34,7 @@ export default function MacbookScrollDemo() {
             </div>
           </a>
         }
-        src={`/cliq-ig.png`}
+        src={`/cliq-insta.png`}
         showGradient={false}
       />
     </div>
