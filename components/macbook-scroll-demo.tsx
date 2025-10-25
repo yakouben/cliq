@@ -3,24 +3,24 @@ import Image from "next/image"
 
 export default function MacbookScrollDemo() {
   return (
-    <div className="w-full overflow-hidden bg-white pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-0 relative">
+    <div className="w-full overflow-hidden bg-white pt-4 sm:pt-8 md:pt-12 lg:pt-16 pb-0 relative">
       <MacbookScroll
         title={
-          <div className="text-center space-y-3 sm:space-y-4 px-4">
-            <span className="bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 bg-clip-text text-transparent font-black tracking-tight text-4xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl">
+          <div className="text-center space-y-2 sm:space-y-3 md:space-y-4 px-2 sm:px-4">
+            <span className="bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 bg-clip-text text-transparent font-black tracking-tight text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl">
               Suivez-nous sur Instagram
             </span>
-            <div className="flex items-center justify-center gap-2 sm:gap-3">
-              <div className="h-px w-8 sm:w-12 md:w-16 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
-              <span className="text-purple-600 font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+            <div className="flex items-center justify-center gap-1 sm:gap-2 md:gap-3">
+              <div className="h-px w-6 sm:w-8 md:w-12 lg:w-16 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
+              <span className="text-purple-600 font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
                 pour découvrir nos créations
               </span>
-              <div className="h-px w-8 sm:w-12 md:w-16 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
+              <div className="h-px w-6 sm:w-8 md:w-12 lg:w-16 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
             </div>
-            <div className="flex items-center justify-center gap-2 mt-4 sm:mt-6">
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-purple-500 rounded-full animate-pulse"></div>
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-purple-300 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+            <div className="flex items-center justify-center gap-1 sm:gap-2 mt-2 sm:mt-4 md:mt-6">
+              <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 bg-purple-500 rounded-full animate-pulse"></div>
+              <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+              <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 bg-purple-300 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
             </div>
           </div>
         }

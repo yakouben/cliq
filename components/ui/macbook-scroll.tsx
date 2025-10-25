@@ -39,14 +39,14 @@ export const MacbookScroll = ({
   badge?: React.ReactNode;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isSmall, setIsSmall] = useState(false);
+  const [isHydrated, setIsHydrated] = useState(false);
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
-
-  const [isMobile, setIsMobile] = useState(false);
-  const [isSmall, setIsSmall] = useState(false);
-  const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
     setIsHydrated(true);
@@ -72,12 +72,12 @@ export const MacbookScroll = ({
   const scaleX = useTransform(
     scrollYProgress,
     [0, 0.3],
-    [1.2, isHydrated && isSmall ? 1.1 : 1.2],
+    [1.2, isHydrated && isSmall ? 1.0 : 1.2],
   );
   const scaleY = useTransform(
     scrollYProgress,
     [0, 0.3],
-    [0.6, isHydrated && isSmall ? 1.1 : 1.2],
+    [0.6, isHydrated && isSmall ? 1.0 : 1.2],
   );
   const translate = useTransform(scrollYProgress, [0, 1], [0, isHydrated && isSmall ? 500 : 800]);
   const rotate = useTransform(scrollYProgress, [0.1, 0.12, 0.3], [-28, -28, 0]);
@@ -87,14 +87,14 @@ export const MacbookScroll = ({
   return (
     <div
       ref={ref}
-      className="flex min-h-[200vh] shrink-0 scale-[0.6] transform flex-col items-center justify-start py-0 [perspective:800px] sm:scale-[0.8] md:scale-75 lg:scale-100 md:py-80"
+      className="flex min-h-[80vh] sm:min-h-[100vh] md:min-h-[200vh] shrink-0 scale-[0.85] transform flex-col items-center justify-start py-0 [perspective:800px] sm:scale-[0.9] md:scale-75 lg:scale-100 sm:py-10 md:py-80"
     >
       <motion.h2
         style={{
           translateY: isHydrated ? textTransform : 0,
           opacity: isHydrated ? textOpacity : 1,
         }}
-        className="mb-12 sm:mb-16 md:mb-20 text-center text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-800 dark:text-white px-4"
+        className="mb-4 sm:mb-8 md:mb-16 lg:mb-20 text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 dark:text-white px-2 sm:px-4"
       >
         {title || (
           <span>
@@ -112,7 +112,7 @@ export const MacbookScroll = ({
         isHydrated={isHydrated}
       />
       {/* Base area */}
-      <div className="relative -z-10 h-[22rem] w-[32rem] overflow-hidden rounded-2xl bg-gray-200 dark:bg-[#272729]">
+      <div className="relative -z-10 h-[18rem] w-[28rem] sm:h-[20rem] sm:w-[30rem] md:h-[22rem] md:w-[32rem] overflow-hidden rounded-2xl bg-gray-200 dark:bg-[#272729]">
         {/* above keyboard bar */}
         <div className="relative h-10 w-full">
           <div className="absolute inset-x-0 mx-auto h-4 w-[80%] bg-[#050505]" />
@@ -162,7 +162,7 @@ export const Lid = ({
           transformOrigin: "bottom",
           transformStyle: "preserve-3d",
         }}
-        className="relative h-[12rem] w-[32rem] rounded-2xl bg-[#010101] p-2"
+        className="relative h-[10rem] w-[28rem] sm:h-[11rem] sm:w-[30rem] md:h-[12rem] md:w-[32rem] rounded-2xl bg-[#010101] p-2"
       >
         <div
           style={{
@@ -184,10 +184,10 @@ export const Lid = ({
           transformStyle: "preserve-3d",
           transformOrigin: "top",
         }}
-        className="absolute inset-0 h-96 w-[32rem] rounded-2xl bg-[#010101] p-2"
+        className="absolute inset-0 h-80 w-[28rem] sm:h-88 sm:w-[30rem] md:h-96 md:w-[32rem] rounded-2xl bg-[#010101] p-2"
       >
         <div className="absolute inset-0 rounded-lg bg-[#272729]" />
-        {src ? (
+        {src && isHydrated ? (
           <Image
             src={src}
             alt="macbook screen content"
@@ -200,7 +200,7 @@ export const Lid = ({
           />
         ) : (
           <div className="absolute inset-0 h-full w-full rounded-lg bg-gray-800 flex items-center justify-center z-10">
-            <span className="text-white text-sm">No image provided</span>
+            <span className="text-white text-sm">{src ? 'Loading...' : 'No image provided'}</span>
           </div>
         )}
       </motion.div>

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Play, Users, Zap, Heart } from 'lucide-react';
+import { VideoPlayer } from '@/components/VideoPlayer';
 
 const ChezCliq = () => {
   const containerVariants = {
@@ -36,9 +37,9 @@ const ChezCliq = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {/* Left Column - Purple Speech Bubble Card */}
+          {/* Content Column - First on mobile, first on desktop */}
           <motion.div
-            className="relative lg:order-1"
+            className="relative order-1 lg:order-1"
             variants={itemVariants}
           >
             <div className="relative bg-gradient-to-br from-purple-600 to-purple-700 rounded-3xl p-8 shadow-2xl">
@@ -128,7 +129,8 @@ const ChezCliq = () => {
                 <div className="bg-white/20 rounded-full px-3 py-1 text-white text-sm">
                   Cliq
                 </div>
-                <motion.button
+                <motion.a
+                  href="#footer"
                   className="bg-gradient-to-br from-purple-600 to-purple-700 text-white rounded-full px-6 py-3 font-semibold flex items-center gap-2 hover:from-purple-700 hover:to-purple-800 transition-all duration-300"
                   whileHover={{ 
                     scale: 1.05,
@@ -136,16 +138,16 @@ const ChezCliq = () => {
                   }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  DÉCOUVRIR NOTRE ÉQUIPE
+                  CONTACTEZ-NOUS
                   <ArrowUpRight className="w-4 h-4" />
-                </motion.button>
+                </motion.a>
               </motion.div>
             </div>
           </motion.div>
 
-          {/* Right Column - Video */}
+          {/* Video Column - Second on mobile, second on desktop */}
           <motion.div
-            className="relative lg:order-2 w-full"
+            className="relative order-2 lg:order-2 w-full"
             variants={itemVariants}
           >
             <motion.div
@@ -155,29 +157,10 @@ const ChezCliq = () => {
                 transition: { duration: 0.3 }
               }}
             >
-              <div 
-                style={{
-                  padding: '75% 0 0 0',
-                  position: 'relative',
-                  width: '100%'
-                }}
-              >
-                <iframe 
-                  src="https://player.vimeo.com/video/1126504474?badge=0&autopause=0&autoplay=1&loop=1&player_id=0&app_id=58479" 
-                  frameBorder="0" 
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                  referrerPolicy="strict-origin-when-cross-origin" 
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '20px'
-                  }} 
-                  title="Chez Cliq - Behind the Scenes"
-                />
-              </div>
+              <VideoPlayer 
+                src="https://player.vimeo.com/video/1126504474?badge=0&autopause=0&autoplay=1&loop=1&player_id=0&app_id=58479"
+                title="Chez Cliq - Behind the Scenes"
+              />
             </motion.div>
           </motion.div>
         </motion.div>

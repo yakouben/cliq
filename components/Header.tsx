@@ -26,7 +26,7 @@ const Header = () => {
 
   const navItems = [
     { name: 'Accueil', href: '#hero', icon: Home },
-    { name: 'Services', href: '#services', icon: Briefcase },
+    { name: 'Services', href: '#qui-sommes-nous', icon: Briefcase },
     { name: 'Contact', href: '#footer', icon: Phone },
   ];
 
@@ -102,7 +102,9 @@ const Header = () => {
 
             {/* Desktop CTA Button */}
             <motion.a
-              href="#services"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfz4a-fOs9EYhxgqzs4MLun-5ZkMjOshC3Yj2fkhkfVF0xWog/viewform?usp=header"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden lg:flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-purple-500/25 transition-all duration-300 group"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

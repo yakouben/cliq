@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import { safeWindow } from '@/lib/safeWindow';
+import { VideoPlayer } from '@/components/VideoPlayer';
 
 const QuiSommesNous = () => {
   const containerVariants = {
@@ -36,9 +38,9 @@ const QuiSommesNous = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {/* Left Column - Video */}
+          {/* Video Column - Second on mobile, first on desktop */}
           <motion.div
-            className="relative lg:order-1 w-full"
+            className="relative order-2 lg:order-1 w-full"
             variants={itemVariants}
           >
             <motion.div
@@ -48,35 +50,16 @@ const QuiSommesNous = () => {
                 transition: { duration: 0.3 }
               }}
             >
-              <div 
-                style={{
-                  padding: '75% 0 0 0',
-                  position: 'relative',
-                  width: '100%'
-                }}
-              >
-                <iframe 
-                  src="https://player.vimeo.com/video/1126659044?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1" 
-                  frameBorder="0" 
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                  referrerPolicy="strict-origin-when-cross-origin" 
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '20px'
-                  }} 
-                  title="À propos de Cliq"
-                />
-              </div>
+              <VideoPlayer 
+                src="https://player.vimeo.com/video/1126659044?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1"
+                title="À propos de Cliq"
+              />
             </motion.div>
           </motion.div>
 
-          {/* Right Column - Purple Speech Bubble Card */}
+          {/* Content Column - First on mobile, second on desktop */}
           <motion.div
-            className="relative lg:order-2"
+            className="relative order-1 lg:order-2"
             variants={itemVariants}
           >
             <div className="relative bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl">
@@ -174,6 +157,7 @@ const QuiSommesNous = () => {
                     transition: { duration: 0.2 }
                   }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={() => safeWindow?.open('https://docs.google.com/forms/d/e/1FAIpQLSfz4a-fOs9EYhxgqzs4MLun-5ZkMjOshC3Yj2fkhkfVF0xWog/viewform?usp=header', '_blank', 'noopener,noreferrer')}
                 >
                   DEMANDER UN DEVIS
                   <ArrowUpRight className="w-3 h-3 sm:w-4 sm:h-4" />
