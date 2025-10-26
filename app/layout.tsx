@@ -12,37 +12,37 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://cliqevents.com'),
-  title: 'Cliq - Agence Marketing Digital Premium en Algérie | Marketing d\'Influence & Communication',
-  description: 'Agence 360° spécialisée en marketing d\'influence, communication digitale, développement web, branding et événementiel premium en Algérie. Transformez vos idées en succès digitaux.',
-  keywords: 'marketing digital Algérie, marketing influence, agence communication, développement web, branding, événementiel, social media management, stratégie digitale, Algérie',
-  authors: [{ name: 'Cliq Events', url: 'https://cliqevents.com' }],
-  creator: 'Cliq Events',
-  publisher: 'Cliq Events',
+  metadataBase: new URL('https://cliqevents.agency'),
+  title: 'Cliq Events Agency - Agence Marketing Digital Premium en Algérie | Cliq Events | Cliqevents',
+  description: 'Cliq Events Agency (cliqevents.agency) - Agence 360° spécialisée en marketing d\'influence, communication digitale, développement web, branding et événementiel premium en Algérie. Cliq Events transforme vos idées en succès digitaux.',
+  keywords: 'cliqevents, cliq events, cliqevents agency, cliqevents.agency, cliq agency, cliq events agency, marketing digital Algérie, marketing influence, agence communication, développement web, branding, événementiel, social media management, stratégie digitale, Algérie, cliq, cliqevents agency Algérie',
+  authors: [{ name: 'Cliq Events Agency', url: 'https://cliqevents.agency' }],
+  creator: 'Cliq Events Agency',
+  publisher: 'Cliq Events Agency',
   robots: 'index, follow',
   alternates: {
-    canonical: 'https://cliqevents.com',
+    canonical: 'https://cliqevents.agency',
   },
   openGraph: {
-    title: 'Cliq - Agence Marketing Digital Premium en Algérie',
-    description: 'Agence 360° spécialisée en marketing d\'influence, communication digitale, développement web, branding et événementiel premium en Algérie.',
+    title: 'Cliq Events Agency (cliqevents.agency) - Agence Marketing Digital Premium en Algérie',
+    description: 'Cliq Events Agency (cliqevents.agency) - Agence 360° spécialisée en marketing d\'influence, communication digitale, développement web, branding et événementiel premium en Algérie.',
     type: 'website',
     locale: 'fr_FR',
-    siteName: 'Cliq Events',
-    url: 'https://cliqevents.com',
+    siteName: 'Cliq Events Agency - cliqevents.agency',
+    url: 'https://cliqevents.agency',
     images: [
       {
         url: '/cliq-logo-bg.jpeg',
         width: 1200,
         height: 630,
-        alt: 'Cliq - Agence Marketing Digital Premium',
+        alt: 'Cliq Events Agency - Agence Marketing Digital Premium',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cliq - Agence Marketing Digital Premium en Algérie',
-    description: 'Agence 360° spécialisée en marketing d\'influence, communication digitale, développement web, branding et événementiel premium en Algérie.',
+    title: 'Cliq Events Agency (cliqevents.agency) - Agence Marketing Digital Premium en Algérie',
+    description: 'Cliq Events Agency (cliqevents.agency) - Agence 360° spécialisée en marketing d\'influence, communication digitale, développement web, branding et événementiel premium en Algérie.',
     images: ['/cliq-logo-bg.jpeg'],
   },
   verification: {
@@ -70,7 +70,58 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
         <link rel="icon" href="/logo-without-bg.png" type="image/png" />
         <link rel="apple-touch-icon" href="/logo-without-bg.png" />
+        <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#6a0dad" />
+        
+        {/* Additional SEO Meta Tags */}
+        <meta name="application-name" content="Cliq Events Agency" />
+        <meta name="apple-mobile-web-app-title" content="Cliq Events Agency" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="msapplication-TileColor" content="#6a0dad" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
+        
+        {/* Domain-specific meta tags for better SEO */}
+        <meta name="domain" content="cliqevents.agency" />
+        <meta name="brand" content="Cliq Events Agency" />
+        <meta name="company" content="Cliq Events Agency" />
+        <meta name="organization" content="Cliq Events Agency" />
+        
+        {/* Geographic and language targeting */}
+        <meta name="geo.region" content="DZ" />
+        <meta name="geo.country" content="Algeria" />
+        <meta name="geo.placename" content="Alger" />
+        <meta name="language" content="French" />
+        <meta name="content-language" content="fr" />
+        
+        {/* Business information */}
+        <meta name="contact" content="cliqevents3@gmail.com" />
+        <meta name="phone" content="+213-540-017-730" />
+        <meta name="email" content="cliqevents3@gmail.com" />
+        
+        {/* Additional Open Graph tags */}
+        <meta property="og:site_name" content="Cliq Events Agency" />
+        <meta property="og:locale" content="fr_FR" />
+        <meta property="og:country-name" content="Algeria" />
+        <meta property="og:region" content="Alger" />
+        
+        {/* Twitter Card additional tags */}
+        <meta name="twitter:site" content="@cliqevents" />
+        <meta name="twitter:creator" content="@cliqevents" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://cliqevents.agency" />
+        
+        {/* Sitemap */}
+        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+        
+        {/* Preconnect to external domains for performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
@@ -78,10 +129,12 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "Cliq Events",
-              "description": "Agence 360° spécialisée en marketing d'influence, communication digitale, développement web, branding et événementiel premium en Algérie.",
-              "url": "https://cliqevents.com",
-              "logo": "https://cliqevents.com/logo-without-bg.png",
+              "name": "Cliq Events Agency",
+              "alternateName": ["Cliq Events", "Cliqevents", "Cliq Events Agency"],
+              "description": "Cliq Events Agency (cliqevents.agency) - Agence 360° spécialisée en marketing d'influence, communication digitale, développement web, branding et événementiel premium en Algérie.",
+              "url": "https://cliqevents.agency",
+              "logo": "https://cliqevents.agency/logo-without-bg.png",
+              "image": "https://cliqevents.agency/cliq-logo-bg.jpeg",
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+213-540-017-730",
@@ -116,7 +169,26 @@ export default function RootLayout({
                   "@type": "Service",
                   "name": "Communication Digitale",
                   "description": "Stratégies de communication digitale et branding"
+                },
+                {
+                  "@type": "Service",
+                  "name": "Événementiel Premium",
+                  "description": "Organisation d'événements premium et corporate"
                 }
+              ],
+              "foundingDate": "2020",
+              "founder": {
+                "@type": "Person",
+                "name": "Cliq Events Team"
+              },
+              "knowsAbout": [
+                "Marketing Digital",
+                "Marketing d'Influence", 
+                "Développement Web",
+                "Communication Digitale",
+                "Branding",
+                "Événementiel",
+                "Social Media Management"
               ]
             })
           }}
