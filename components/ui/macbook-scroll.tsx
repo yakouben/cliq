@@ -72,14 +72,14 @@ export const MacbookScroll = ({
   const scaleX = useTransform(
     scrollYProgress,
     [0, 0.3],
-    [1.2, isHydrated && isSmall ? 1.0 : 1.2],
+    [1.2, isHydrated && isSmall ? 0.95 : 1.2],
   );
   const scaleY = useTransform(
     scrollYProgress,
     [0, 0.3],
-    [0.6, isHydrated && isSmall ? 1.0 : 1.2],
+    [0.6, isHydrated && isSmall ? 0.95 : 1.2],
   );
-  const translate = useTransform(scrollYProgress, [0, 1], [0, isHydrated && isSmall ? 500 : 800]);
+  const translate = useTransform(scrollYProgress, [0, 1], [0, isHydrated && isSmall ? 400 : 800]);
   const rotate = useTransform(scrollYProgress, [0.1, 0.12, 0.3], [-28, -28, 0]);
   const textTransform = useTransform(scrollYProgress, [0, 0.3], [0, 100]);
   const textOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
@@ -87,7 +87,7 @@ export const MacbookScroll = ({
   return (
     <div
       ref={ref}
-      className="flex min-h-[80vh] sm:min-h-[100vh] md:min-h-[200vh] shrink-0 scale-[0.85] transform flex-col items-center justify-start py-0 [perspective:800px] sm:scale-[0.9] md:scale-75 lg:scale-100 sm:py-10 md:py-80"
+      className="flex min-h-[80vh] sm:min-h-[100vh] md:min-h-[200vh] shrink-0 scale-[0.75] transform flex-col items-center justify-start py-0 [perspective:800px] sm:scale-[0.8] md:scale-75 lg:scale-100 sm:py-10 md:py-80"
     >
       <motion.h2
         style={{
@@ -183,6 +183,7 @@ export const Lid = ({
           translateY: isHydrated ? translate : 0,
           transformStyle: "preserve-3d",
           transformOrigin: "top",
+          willChange: "transform",
         }}
         className="absolute inset-0 h-80 w-[28rem] sm:h-88 sm:w-[30rem] md:h-96 md:w-[32rem] rounded-2xl bg-[#010101] p-2"
       >
@@ -193,6 +194,9 @@ export const Lid = ({
             alt="macbook screen content"
             fill
             className="rounded-lg object-cover object-left-top z-10"
+            priority={false}
+            loading="lazy"
+            quality={75}
             onError={(e) => {
               console.error('Image failed to load:', src);
               e.currentTarget.style.display = 'none';
